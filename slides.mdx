@@ -1,0 +1,522 @@
+import { Appear, Image, themes } from 'mdx-deck'
+import { CodeSurfer } from 'code-surfer'
+import { duotoneLight } from "@code-surfer/themes"
+import { Canvas, useFrame } from 'react-three-fiber'
+import Blink from './components/Blink.js'
+
+export const theme = themes.comic
+
+# React beyond web
+
+---
+
+# Me
+
+<ul>
+  <Appear>
+    <li>JavaScript Developer</li>
+    <li>at OneSoil</li>
+    <li>#minsk-hackerspace member</li>
+  </Appear>
+</ul>
+
+---
+
+# React
+
+---
+
+![img](http://localhost:5000/scr-onesoil-1.png)
+
+---
+
+![img](http://localhost:5000/scr-onesoil-2.png)
+
+---
+
+![img](http://localhost:5000/scr-twitter.png)
+
+---
+
+![img](http://localhost:5000/scr-react-docs.png)
+
+---
+
+![img](http://localhost:5000/scr-slides.png)
+
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// Disclaimer
+
+<div>
+  <p>
+    Some text!
+  </p>
+  <SomeComponent some={props}>
+    {[1, 2, 3].join('some content')}
+  </SomeComponent>
+</div>
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+const Blink = ({ children }) => {
+  const [show, setShow] = useState(false);
+
+  useInterval(1000, () => {
+    setShow(!show);
+  });
+
+  return show ? children : null;
+}
+
+<div>
+  <Blink>Hello, <b>world!</b>
+</div>
+```
+
+</CodeSurfer>
+
+---
+
+<div>
+  <Blink>Hello, <b>world!</b></Blink>
+</div>
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// SVG
+
+<svg width={240} height={240} viewBox="0 0 24 24">
+  <Blink>
+    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 ..."/>
+  </Blink>
+</svg>
+```
+
+</CodeSurfer>
+
+---
+
+<svg width={240} height={240} viewBox="0 0 24 24">
+  <Blink>
+    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+  </Blink>
+</svg>
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// 3D?
+
+<Canvas>
+  <Blink>
+    <mesh rotation={[1, 1, 1]}>
+      <boxBufferGeometry attach="geometry" />
+      <meshNormalMaterial attach="material" />
+    </mesh>
+  </Blink>
+</Canvas>
+```
+
+</CodeSurfer>
+
+---
+
+<Canvas>
+  <Blink>
+    <mesh rotation={[1, 1, 1]}>
+      <boxBufferGeometry attach="geometry" />
+      <meshNormalMaterial attach="material" />
+    </mesh>
+  </Blink>
+</Canvas>
+
+---
+
+# react-three-fiber
+
+https://github.com/react-spring/react-three-fiber
+
+---
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <video
+        controls
+        autoplay
+        loop
+        muted
+        src="http://localhost:5000/three-fiber.mp4"
+      />
+    `,
+  }}
+/>
+
+---
+
+# "beyond web" part
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// What about this? React-native?
+
+<View style={styles.panel}>
+  <View style={styles.greetingBox}>
+    <Text style={styles.greeting}>
+      {`Counter: ${count}`}
+    </Text>
+  </View>
+</View>
+```
+
+</CodeSurfer>
+
+---
+
+<img style={{ maxHeight: '100vh' }} src="http://localhost:5000/react-native.png"/>
+
+---
+
+or
+
+---
+
+<img style={{ maxHeight: '100vh' }} src="http://localhost:5000/react-native-web.png"/>
+
+---
+
+or
+
+---
+
+![img](http://localhost:5000/react-native-windows.png)
+
+---
+
+or
+
+---
+
+<img style={{ maxHeight: '100vh' }} src="http://localhost:5000/react-native-macos.png"/>
+
+---
+
+or
+
+---
+
+![img](http://localhost:5000/react-360.jpg)
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// You can still blink!
+
+<View style={styles.panel}>
+  <Blink>
+    <VrButton>No click me!</VrButton>
+  </Blink>
+</View>
+```
+
+</CodeSurfer>
+
+---
+
+# GUIs beyond WEB?
+ignoring desktop, it's dying anyway
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```bash
+$ cowsay Terminals!
+ ____________
+< Terminals! >
+ ------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+</CodeSurfer>
+
+---
+
+![img](http://localhost:5000/react-blessed.gif)
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// Blink still works!
+
+<Blink>
+  <element>
+    <box ref="box">
+      First box.
+    </box>
+  </element>
+</Blink>
+
+// No demo =(
+```
+
+</CodeSurfer>
+
+---
+
+react-ink
+
+![img](http://localhost:5000/react-ink.svg)
+
+---
+
+<img style={{ maxHeight: '100vh' }} src="http://localhost:5000/react-ink.png"/>
+
+---
+
+# Embedded?
+your fridge is doomed (with react)
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// This one runs on raspberry!
+
+<Fragment>
+  <Text row={0} col={0}>{hello}</Text>
+  <Text row={1} col={0}>Hello QuickJS!</Text>
+  <Pixel x={p} y={p} />
+</Fragment>
+```
+
+</CodeSurfer>
+
+---
+
+![img](http://localhost:5000/react-ssd.jpg)
+
+---
+
+![img](http://localhost:5000/old-code.png)
+
+![img](http://localhost:5000/old-result.png)
+
+---
+
+# Why GUIs anyway?
+
+---
+
+![img](http://localhost:5000/sketch.png)
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+const breakfast = (
+  <>
+    <plate>
+      <Pancake/>
+      {range(2).map(i => <toast key={i}/>)}
+    </plate>
+
+    {/* We need more coffee on mondays */}
+    {moment().day === 1
+      ? <coffee variant="double"/>
+      : <tea/>}
+  </>
+)
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// Static document?
+// What's next?
+// Why do we even need React for something static?
+
+<Document>
+  <Page size="A4" style={styles.page}>
+    <View style={styles.section}>
+      <Text>Section #1</Text>
+    </View>
+    <View style={styles.section}>
+      <Text>Section #2</Text>
+    </View>
+  </Page>
+</Document>
+```
+
+</CodeSurfer>
+
+---
+
+<iframe style={{ width: '100vw', height: '100vh' }} src="http://localhost:5000/resume.pdf"/>
+
+---
+
+Does anything else look like a tree on your pc?
+
+---
+
+<img style={{ maxHeight: '100vh' }} src="http://localhost:5000/filesystems.png"/>
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+import React from 'react';
+import {
+  renderToFS,
+} from 'react-fs-renderer';
+
+
+const JSONFile = ({ name, json }) => (
+  <file
+    name={`${name}.json`}
+    children={JSON.stringify(json)}
+  />
+);
+
+const MyProjectTemplate = ({ name, displayName }) => (
+  <folder>
+    <JSONFile name="app" json={{ name, displayName }} />
+    <JSONFile name="package" json={{
+      name,
+      version: '0.0.0',
+      main: 'src/${}.js',
+      dependencies,
+    }} />
+    <folder name="src">
+      <file name={`${name}.js`} children={mainFileContent} />
+    </folder>
+  </folder>
+);
+
+
+renderToFS(
+  <MyProjectTemplate
+    displayName="My Great App"
+    name="GreatApp"
+  />,
+  './testDir'
+);
+```
+
+</CodeSurfer>
+
+---
+
+// example here
+
+---
+
+# react-fuse anyone?
+
+---
+
+![img](http://localhost:5000/vk.gif)
+
+---
+
+And finally, the whole point of `Blink` joke
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// react-hardware!
+
+<Board>
+  <Blink>
+    <Led pin={13} value={1}/>
+  </Blink>
+</Board>
+```
+
+</CodeSurfer>
+
+---
+
+![img](http://localhost:5000/led.gif)
+
+---
+
+<CodeSurfer theme={duotoneLight}>
+
+```jsx
+// The things you can do...
+
+<container>
+  <board port="/dev/cu.usbmodem1451" pinMapping={arduinoUnoPinMapping}>
+    <Led pin={2} value={this.state.value}
+  </board>
+  <board port="/dev/cu.usbmodem1455" pinMapping={raspberryPiPinMapping}>{...}</board>
+  <board port="/dev/rfcomm0">{someComponentsOnABluetoothConnectedDevice}</board>
+</container>
+```
+
+</CodeSurfer>
+
+---
+
+# react-reconciler
+
+- part of react api
+- write your own renderer!
+
+https://www.npmjs.com/package/react-reconciler
+
+---
+
+# Moar links
+
+- https://blog.atulr.com/react-custom-renderer-1/
+- https://github.com/nitin42/Making-a-custom-React-renderer
+- https://github.com/iamdustan/tiny-react-renderer
+
+---
+
+# Happy React'ing
+
+`/>`
+
+---
+
+<img style={{ width: '500px', height: '500px', imageRendering: 'pixelated' }} src="http://localhost:5000/link.png"/>
