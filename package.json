@@ -20,6 +20,6 @@
     "code-surfer": "^3.0.0",
     "prettier": "^1.19.1",
     "react-three-fiber": "^4.0.5",
-    "three": "^0.112.1"
+    "three": "^0.125.0"
   }
 }
